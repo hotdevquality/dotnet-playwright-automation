@@ -1,0 +1,22 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "url": "/soap/bank",
+    "bodyPatterns": [
+      {
+        "matchesXPath": "//ns:GetBankStatusRequest/ns:AccountNumber[text()='FAULT']",
+        "xPathNamespaces": {
+          "ns": "http://example.com/bank"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "Content-Type": "text/xml; charset=utf-8"
+    },
+    "body": "<?xml version=\"1.0\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>Bank internal error</faultstring></soap:Fault></soap:Body></soap:Envelope>"
+  }
+}

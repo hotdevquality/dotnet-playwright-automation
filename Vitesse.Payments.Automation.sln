@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6085D22C-ED82-4F2E-9FF1-75C471994966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkProject", "src\FrameworkProject\FrameworkProject.csproj", "{C2ACF06C-E88C-4E85-B1E5-47B39DFC4A83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8CCB4825-CBEA-41AC-B9F9-EBDAD57B5035}"
+	ProjectSection(SolutionItems) = preProject
+		tests\global.json = tests\global.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Automation", "tests\Tests.Automation\Tests.Automation.csproj", "{E55944F6-8BED-4743-95BD-930EFBD94400}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2ACF06C-E88C-4E85-B1E5-47B39DFC4A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2ACF06C-E88C-4E85-B1E5-47B39DFC4A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2ACF06C-E88C-4E85-B1E5-47B39DFC4A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2ACF06C-E88C-4E85-B1E5-47B39DFC4A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E55944F6-8BED-4743-95BD-930EFBD94400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55944F6-8BED-4743-95BD-930EFBD94400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E55944F6-8BED-4743-95BD-930EFBD94400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55944F6-8BED-4743-95BD-930EFBD94400}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2ACF06C-E88C-4E85-B1E5-47B39DFC4A83} = {6085D22C-ED82-4F2E-9FF1-75C471994966}
+		{E55944F6-8BED-4743-95BD-930EFBD94400} = {8CCB4825-CBEA-41AC-B9F9-EBDAD57B5035}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+{
+  "scenarioName": "payment-status-ABC123",
+  "requiredScenarioState": "Processing",
+  "newScenarioState": "Processed",
+  "request": {
+    "method": "GET",
+    "url": "/api/status/ABC123"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "ABC123",
+      "status": "processed"
+    }
+  }
+}

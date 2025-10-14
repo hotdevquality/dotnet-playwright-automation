@@ -1,0 +1,22 @@
+{
+  "priority": 5,
+  "request": {
+    "method": "POST",
+    "url": "/soap/bank",
+    "headers": {
+      "Content-Type": {
+        "contains": "text/xml"
+      },
+      "SOAPAction": {
+        "contains": "GetBankStatus"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/xml; charset=utf-8"
+    },
+    "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://example.com/bank\">\n  <soap:Body>\n    <ns:GetBankStatusResponse>\n      <ns:Status>OK</ns:Status>\n    </ns:GetBankStatusResponse>\n  </soap:Body>\n</soap:Envelope>"
+  }
+}

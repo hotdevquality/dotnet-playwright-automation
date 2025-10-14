@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/bank/submit?case=unsupported"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "error": "unsupported_method",
+      "message": "Payment method not supported."
+    }
+  }
+}

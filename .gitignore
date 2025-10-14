@@ -1,0 +1,46 @@
+.idea
+*.user
+*.DotSettings.user
+*__MACOSX/
+*.DS_Store
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+.vs/
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Generated files
+.idea/**/contentModel.xml
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## VS CODE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# NuGet Packages
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# Node.js Tools for Visual Studio
+.ntvs_analysis.dat
+node_modules/
+
+# IntelliJ
+out/
+*.playwright

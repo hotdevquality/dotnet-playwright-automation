@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Mark as test library (no Main) -->
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <OutputType>Library</OutputType>
+      
+    <!-- Ensure all transitive deps are copied to bin -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>  
+  </PropertyGroup>
+
+  <!-- Test host / xUnit runner / Reqnroll + MSBuild generator + DI-->  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.11.0" PrivateAssets="all" />
+    <PackageReference Include="Reqnroll" Version="3.1.2" />
+    <PackageReference Include="Reqnroll.xUnit" Version="3.1.2" />
+    <PackageReference Include="Reqnroll.Tools.MsBuild.Generation" Version="3.1.2" />
+    <PackageReference Include="Reqnroll.Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+      
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+    
+  <!-- Test libraries -->
+  <ItemGroup>  
+    <PackageReference Include="FluentAssertions" Version="8.7.1" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.55.0" />    
+    <PackageReference Include="NuGet.Frameworks" Version="6.14.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FrameworkProject\FrameworkProject.csproj" />
+  </ItemGroup>
+
+  <!-- IMPORTANT: enable code-behind generation -->
+  <ItemGroup>
+      <!-- Tell MSBuild to generate code-behind for all .feature files -->
+      <None Update="**\*.feature">
+          <Generator>ReqnrollSingleFileGenerator</Generator>
+          <LastGenOutput>%(Filename).feature.cs</LastGenOutput>
+      </None>
+      
+      <!-- Ensuring the generated .feature.cs are compiled -->
+      <None Remove="**\*.feature.cs" />      
+  </ItemGroup>        
+</Project>

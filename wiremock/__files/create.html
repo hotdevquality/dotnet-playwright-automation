@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<body>
+<h1>Create Payment</h1>
+<form action="/payments/list">
+    <label>Method</label>
+    <select name="method" id="method">
+        <option value="bank">bank</option>
+        <option value="cheque">cheque</option>
+        <option value="credit card">credit card</option>
+        <option value="paypal">paypal</option>
+    </select>
+
+    <!-- Bank -->
+    <div data-section="bank">
+        <input name="sortCode" placeholder="Sort Code"/>
+        <input name="accountNumber" placeholder="Account Number"/>
+    </div>
+
+    <!-- Cheque -->
+    <div data-section="cheque" style="display:none">
+        <input name="chequeNumber" placeholder="Cheque Number"/>
+    </div>
+
+    <!-- Credit card -->
+    <div data-section="credit card" style="display:none">
+        <input name="cardNumber" placeholder="Card Number"/>
+        <input name="cardExpiry" placeholder="MM/YY"/>
+    </div>
+
+    <!-- PayPal -->
+    <div data-section="paypal" style="display:none">
+        <input name="paypalEmail" placeholder="PayPal Email"/>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const sel = document.getElementById('method');
+    const sections = Array.from(document.querySelectorAll('[data-section]'));
+    const error = document.createElement('div');
+    error.className = 'error';
+    error.style.color = 'red';
+    document.body.prepend(error);
+
+    function update() {
+        sections.forEach(s => s.style.display = (s.getAttribute('data-section') === sel.value) ? 'block' : 'none');
+        error.textContent = '';
+    }
+
+    sel.addEventListener('change', update);
+    update();
+
+    document.querySelector('form').addEventListener('submit', e => {
+        // simple negative validation
+        if (sel.value === 'bank') {
+            const acct = document.querySelector('input[name="accountNumber"]').value || '';
+            if (acct.length !== 8 || /[^0-9]/.test(acct)) {
+                e.preventDefault();
+                error.textContent = 'Invalid account number';
+                return;
+            }
+        }
+        e.preventDefault();
+        window.location.href = "/payments/list";
+    });
+</script>
+<script>
+    const sel = document.getElementById('method');
+    const sections = Array.from(document.querySelectorAll('[data-section]'));
+
+    function update() {
+        sections.forEach(s => s.style.display = (s.getAttribute('data-section') === sel.value) ? 'block' : 'none');
+    }
+
+    sel.addEventListener('change', update);
+    update();
+    document.querySelector('form').addEventListener('submit', e => {
+        e.preventDefault();
+        window.location.href = "/payments/list";
+    });
+</script>
+</body>
+</html>

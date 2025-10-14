@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/bank/submit"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "status": "accepted",
+      "id": "ABC123"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

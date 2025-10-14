@@ -1,0 +1,47 @@
+
+name: ci
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      EPPlusLicense: "NonCommercialPersonal:CI Runner"
+    services:
+      wiremock:
+        image: wiremock/wiremock:3.7.0
+        ports:
+          - 8080:8080
+        volumes:
+          - ${{ github.workspace }}/wiremock/mappings:/home/wiremock/mappings
+          - ${{ github.workspace }}/wiremock/__files:/home/wiremock/__files
+      sftp:
+        image: atmoz/sftp:latest
+        ports:
+          - 2222:22
+        options: >-
+          --health-cmd="echo 'quit' | telnet localhost 22 || exit 1"
+          --health-interval=5s --health-timeout=2s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build
+        run: dotnet build -v:minimal
+      - name: Install Playwright browsers
+        run: ./tests/Tests.Automation/bin/Debug/net8.0/playwright.sh install
+      - name: Run tests
+        run: dotnet test --logger "trx;LogFileName=testresults.trx"
+        
+      - name: Upload Reqnroll HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: reqnroll-html
+          path: tests/Tests.Automation/bin/**/report/reqnroll_report.html
+
+      - name: Upload Cucumber Messages
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-messages
+          path: tests/Tests.Automation/bin/**/report/messages.ndjson
+

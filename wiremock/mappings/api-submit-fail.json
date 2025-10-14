@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/bank/submit?case=fail"
+  },
+  "response": {
+    "status": 503,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "error": "bank_unavailable",
+      "message": "Downstream bank error."
+    }
+  }
+}

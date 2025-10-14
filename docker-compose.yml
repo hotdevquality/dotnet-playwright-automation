@@ -1,0 +1,12 @@
+services:
+  wiremock:
+    image: wiremock/wiremock:3.7.0
+    ports: [ "8080:8080" ]
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/__files:/home/wiremock/__files
+    command: [ "--verbose" ]
+  sftp:
+    image: atmoz/sftp:latest
+    ports: [ "2222:22" ]
+    command: "testuser:password:::upload,upload/inbound"

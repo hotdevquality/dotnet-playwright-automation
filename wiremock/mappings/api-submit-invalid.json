@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/bank/submit?case=invalid"
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "error": "invalid_payment_details",
+      "message": "Amount or account invalid."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/"
+  },
+  "response": {
+    "status": 302,
+    "headers": {
+      "Location": "/login"
+    }
+  }
+}

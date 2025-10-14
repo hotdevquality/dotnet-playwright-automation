@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<body>
+<h1>Login</h1>
+<form action="/dashboard">
+    <input name="username"/>
+    <input name="password" type="password"/>
+    <button type="submit">Sign in</button>
+</form>
+<script>
+    document.querySelector("form").addEventListener("submit", e => {
+        e.preventDefault();
+        window.location.href = "/dashboard";
+    });
+</script>
+</body>
+</html>

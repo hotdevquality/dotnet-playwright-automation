@@ -1,0 +1,15 @@
+{
+  "bindingCulture": { "name": "en-us" },
+  "language": { "feature": "en-us" },
+  "generator": { "allowDebugGeneratedFiles": true },
+  "formatters": {
+    "html": {
+      "enabled": true,
+      "outputFilePath": "report/reqnroll_report.html"
+    },
+    "cucumber-messages": {
+      "enabled": true,
+      "outputFilePath": "report/messages.ndjson"
+    }
+  }
+}
