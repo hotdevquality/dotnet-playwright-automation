@@ -29,6 +29,9 @@ namespace Tests.Automation.Features.Payments
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
+#line 1 "CreateSinglePayment.feature"
+#line hidden
+        
         public CreateSinglePaymentUIFeature(CreateSinglePaymentUIFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
@@ -148,7 +151,9 @@ namespace Tests.Automation.Features.Payments
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Create valid UK bank payment", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 7
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -156,10 +161,18 @@ namespace Tests.Automation.Features.Payments
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.WhenAsync("I submit a UK bank payment with sort code \"10-11-12\" and account \"12345678\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("the payment appears with status \"Pending Approval\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 8
+    await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 9
+    await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 10
+    await testRunner.WhenAsync("I submit a UK bank payment with sort code \"10-11-12\" and account \"12345678\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 11
+    await testRunner.ThenAsync("the payment appears with status \"Pending Approval\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

@@ -20,5 +20,5 @@ public class SoapBankNegativeSteps
     }
 
     [Then(@"the SOAP request should fail with a server error")]
-    public void ThenFault() => _err.Should().BeNull();
+    public void ThenFault() => _err.Should().NotBeNull();
 }

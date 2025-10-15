@@ -31,7 +31,7 @@ public class PaymentsApiNegativeSteps
     public async Task WhenSubmitWithCase(string @case)
     {
         // raw to capture status/body (no exception path)
-        var concrete = (PaymentsApi)_api; // safe in this test suite
+        var concrete = (PaymentsApiClient)_api; // safe in this test suite
         (_status, _body) = await concrete.SubmitRawAsync(_req!, @case);
     }
 

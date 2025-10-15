@@ -28,6 +28,9 @@ namespace Tests.Automation.Features.API
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
+#line 1 "SoapBankInt.feature"
+#line hidden
+        
         public SOAPBankIntegrationFeature(SOAPBankIntegrationFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
@@ -145,7 +148,9 @@ namespace Tests.Automation.Features.API
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Get bank status via SOAP", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 4
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -153,8 +158,12 @@ namespace Tests.Automation.Features.API
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.WhenAsync("I request bank status for account \"12345678\" by SOAP", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("the SOAP status should be \"OK\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5
+        await testRunner.WhenAsync("I request bank status for account \"12345678\" by SOAP", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 6
+        await testRunner.ThenAsync("the SOAP status should be \"OK\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

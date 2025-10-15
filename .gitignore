@@ -1,4 +1,5 @@
 .idea
+.git
 *.user
 *.DotSettings.user
 *__MACOSX/

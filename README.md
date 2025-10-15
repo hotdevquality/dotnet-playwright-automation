@@ -18,3 +18,9 @@ After the run, you should have:
 Open the report using Chrome or any browser of choice; just replace it with Google Chrome. 
 * open -a "Google Chrome" tests/Tests.Automation/bin/Debug/net8.0/report/reqnroll_report.html
 
+Additionally, added the **Expressium.LivingDoc.ReqnrollPlugin** NuGet package to the ReqnRoll test project...
+Setup the Expressium formatters properties in the configuration of the ReqnRoll test project...
+Run the tests in the ReqnRoll test project and open the HTML report in the output directory:
+
+* open -a "Google Chrome" tests/Tests.Automation/bin/Debug/net8.0/LivingDoc.html
+

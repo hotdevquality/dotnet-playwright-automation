@@ -28,6 +28,9 @@ namespace Tests.Automation.Features.API
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
+#line 1 "PaymentsApiNegative.feature"
+#line hidden
+        
         public PaymentsAPINegativeCasesFeature(PaymentsAPINegativeCasesFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
@@ -147,7 +150,9 @@ namespace Tests.Automation.Features.API
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Invalid bank details return 422", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 4
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -155,9 +160,15 @@ namespace Tests.Automation.Features.API
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("a bank payment \"Alice\" \"10-11-12\" \"BADACCT\" 0 \"GBP\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.WhenAsync("I submit the payment via API with case \"invalid\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("the API should return status code 422 and error \"invalid_payment_details\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5
+        await testRunner.GivenAsync("a bank payment \"Alice\" \"10-11-12\" \"BADACCT\" 0 \"GBP\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 6
+        await testRunner.WhenAsync("I submit the payment via API with case \"invalid\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 7
+        await testRunner.ThenAsync("the API should return status code 422 and error \"invalid_payment_details\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -179,7 +190,9 @@ namespace Tests.Automation.Features.API
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Unsupported method returns 400", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 10
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -187,9 +200,15 @@ namespace Tests.Automation.Features.API
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("a payment request with method \"crypto\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.WhenAsync("I submit the payment via API with case \"unsupported\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("the API should return status code 400 and error \"unsupported_method\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 11
+        await testRunner.GivenAsync("a payment request with method \"crypto\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 12
+        await testRunner.WhenAsync("I submit the payment via API with case \"unsupported\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 13
+        await testRunner.ThenAsync("the API should return status code 400 and error \"unsupported_method\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -211,7 +230,9 @@ namespace Tests.Automation.Features.API
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Bank outage returns 503", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 16
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -219,9 +240,15 @@ namespace Tests.Automation.Features.API
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("a bank payment \"Bob\" \"10-11-12\" \"12345678\" 10.50 \"GBP\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.WhenAsync("I submit the payment via API with case \"fail\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("the API should return status code 503 and error \"bank_unavailable\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 17
+        await testRunner.GivenAsync("a bank payment \"Bob\" \"10-11-12\" \"12345678\" 10.50 \"GBP\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 18
+        await testRunner.WhenAsync("I submit the payment via API with case \"fail\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 19
+        await testRunner.ThenAsync("the API should return status code 503 and error \"bank_unavailable\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

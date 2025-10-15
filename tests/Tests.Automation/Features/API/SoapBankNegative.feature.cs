@@ -28,6 +28,9 @@ namespace Tests.Automation.Features.API
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
+#line 1 "SoapBankNegative.feature"
+#line hidden
+        
         public SOAPBankNegativeFeature(SOAPBankNegativeFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
@@ -147,7 +150,9 @@ namespace Tests.Automation.Features.API
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("SOAP fault returned by bank", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 4
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -155,8 +160,12 @@ namespace Tests.Automation.Features.API
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.WhenAsync("I request bank status for account \"FAULT\" by SOAP", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("the SOAP request should fail with a server error", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5
+        await testRunner.WhenAsync("I request bank status for account \"FAULT\" by SOAP", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 6
+        await testRunner.ThenAsync("the SOAP request should fail with a server error", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

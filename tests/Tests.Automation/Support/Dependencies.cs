@@ -4,34 +4,48 @@ using Microsoft.Extensions.DependencyInjection;
 using Reqnroll.Microsoft.Extensions.DependencyInjection;
 using Tests.Automation.Pages;
 
-namespace Tests.Automation.Support;
-
-public static class Dependencies
+namespace Tests.Automation.Support
 {
-    [ScenarioDependencies]
-    public static IServiceCollection ConfigureServices()
+    /// <summary>
+    /// Configures dependency injection for Reqnroll scenarios.
+    /// Reads configuration from appsettings.json and environment variables,
+    /// then wires up the shared automation framework and test-level services.
+    /// </summary>
+    public static class Dependencies
     {
-        var services = new ServiceCollection();
+        [ScenarioDependencies]
+        public static IServiceCollection ConfigureServices()
+        {
+            var services = new ServiceCollection();
 
-        var cfg = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json", optional: true)
-            .AddEnvironmentVariables()
-            .Build();
+            // ------------------------------------------------------
+            // Build configuration root (shared by framework + tests)
+            // ------------------------------------------------------
+            var cfgRoot = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Stagging"}.json",
+                             optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .Build();
 
-        services
-            .AddSingleton<IConfig>(new Config
-            {
-                BaseUrl = cfg["BaseUrl"] ?? "http://localhost:8080", 
-                SftpHost = cfg["SftpHost"] ?? "localhost",
-                SftpPort = int.TryParse(cfg["SftpPort"], out var p) ? p : 2222,
-                SftpUser = cfg["SftpUser"] ?? "testuser", 
-                SftpPassword = cfg["SftpPassword"] ?? "password",
-                SftpInboundPath = cfg["SftpInboundPath"] ?? "/upload/inbound"
-            });
-        services
-            .AddTransient<ILoginPage, LoginPage>()
-            .AddScoped<UiContext>()
-            .AddAutomationFramework(new ConfigurationBuilder().Build());
-        return services;
+            // ------------------------------------------------------
+            // Register the core automation framework (shared DI)
+            // ------------------------------------------------------
+            services.AddAutomationFramework(cfgRoot);
+
+            // ------------------------------------------------------
+            // Register page objects, contexts, and any test-specific services
+            // ------------------------------------------------------
+            services
+                .AddScoped<UiContext>()
+                .AddTransient<ILoginPage, LoginPage>();
+
+            // Add more page/service registrations as needed
+            // .AddTransient<IHomePage, HomePage>()
+            // .AddTransient<IPaymentPage, PaymentPage>()
+
+            return services;
+        }
     }
 }

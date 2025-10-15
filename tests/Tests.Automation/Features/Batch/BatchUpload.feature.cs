@@ -28,6 +28,9 @@ namespace Tests.Automation.Features.Batch
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
+#line 1 "BatchUpload.feature"
+#line hidden
+        
         public BatchUploadViaSFTPFeature(BatchUploadViaSFTPFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
@@ -147,7 +150,9 @@ namespace Tests.Automation.Features.Batch
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Upload CSV batch", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 3
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -182,10 +187,18 @@ namespace Tests.Automation.Features.Batch
                             "DE12345678901234567890",
                             "55.75",
                             "EUR"});
-                await testRunner.GivenAsync("a batch containing the following payments", ((string)(null)), table1, "Given ");
-                await testRunner.WhenAsync("I build a CSV batch file", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.AndAsync("I upload the batch to SFTP", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.ThenAsync("the file should exist in the SFTP inbound folder", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 4
+        await testRunner.GivenAsync("a batch containing the following payments", ((string)(null)), table1, "Given ");
+#line hidden
+#line 8
+        await testRunner.WhenAsync("I build a CSV batch file", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 9
+        await testRunner.AndAsync("I upload the batch to SFTP", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 10
+        await testRunner.ThenAsync("the file should exist in the SFTP inbound folder", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -207,7 +220,9 @@ namespace Tests.Automation.Features.Batch
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Upload Excel batch", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 13
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -242,10 +257,18 @@ namespace Tests.Automation.Features.Batch
                             "DE12345678901234567890",
                             "55.75",
                             "EUR"});
-                await testRunner.GivenAsync("a batch containing the following payments", ((string)(null)), table2, "Given ");
-                await testRunner.WhenAsync("I build an Excel batch file", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.AndAsync("I upload the batch to SFTP", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.ThenAsync("the file should exist in the SFTP inbound folder", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 14
+        await testRunner.GivenAsync("a batch containing the following payments", ((string)(null)), table2, "Given ");
+#line hidden
+#line 18
+        await testRunner.WhenAsync("I build an Excel batch file", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 19
+        await testRunner.AndAsync("I upload the batch to SFTP", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 20
+        await testRunner.ThenAsync("the file should exist in the SFTP inbound folder", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -280,7 +303,9 @@ namespace Tests.Automation.Features.Batch
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Build CSV batch for different methods", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 23
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -306,10 +331,18 @@ namespace Tests.Automation.Features.Batch
                             "DE12345678901234567890",
                             "42.00",
                             string.Format("{0}", currency)});
-                await testRunner.GivenAsync("a batch containing the following payments", ((string)(null)), table3, "Given ");
-                await testRunner.WhenAsync("I build a CSV batch file", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.AndAsync("I upload the batch to SFTP", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.ThenAsync("the file should exist in the SFTP inbound folder", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 24
+        await testRunner.GivenAsync("a batch containing the following payments", ((string)(null)), table3, "Given ");
+#line hidden
+#line 27
+        await testRunner.WhenAsync("I build a CSV batch file", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 28
+        await testRunner.AndAsync("I upload the batch to SFTP", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 29
+        await testRunner.ThenAsync("the file should exist in the SFTP inbound folder", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

@@ -15,6 +15,7 @@
 
   <!-- Test host / xUnit runner / Reqnroll + MSBuild generator + DI-->  
   <ItemGroup>
+    <PackageReference Include="Expressium.LivingDoc.ReqnrollPlugin" Version="1.1.0" />
     <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.11.0" PrivateAssets="all" />
     <PackageReference Include="Reqnroll" Version="3.1.2" />
     <PackageReference Include="Reqnroll.xUnit" Version="3.1.2" />
@@ -43,7 +44,17 @@
     <ProjectReference Include="..\..\src\FrameworkProject\FrameworkProject.csproj" />
   </ItemGroup>
 
-  <!-- IMPORTANT: enable code-behind generation -->
+  <ItemGroup>
+      <None Include="appsettings.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Include="appsettings.Stagging.json" Condition="Exists('appsettings.Stagging.json')">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+  </ItemGroup>
+
+
+    <!-- IMPORTANT: enable code-behind generation -->
   <ItemGroup>
       <!-- Tell MSBuild to generate code-behind for all .feature files -->
       <None Update="**\*.feature">

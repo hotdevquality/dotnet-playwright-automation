@@ -1,15 +1,9 @@
 {
-  "bindingCulture": { "name": "en-us" },
-  "language": { "feature": "en-us" },
-  "generator": { "allowDebugGeneratedFiles": true },
+  "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
   "formatters": {
-    "html": {
-      "enabled": true,
-      "outputFilePath": "report/reqnroll_report.html"
-    },
-    "cucumber-messages": {
-      "enabled": true,
-      "outputFilePath": "report/messages.ndjson"
+    "expressium": {
+      "outputFilePath": "LivingDoc.ndjson",
+      "outputFileTitle": "Vitesse.Payments.Automation.UI.API.Batch.Tests"
     }
   }
 }

@@ -28,6 +28,9 @@ namespace Tests.Automation.Features.API
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
+#line 1 "PaymentsApi.feature"
+#line hidden
+        
         public PaymentsAPIIntegrationFeature(PaymentsAPIIntegrationFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
@@ -145,7 +148,9 @@ namespace Tests.Automation.Features.API
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Submit bank payment via HTTP POST", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 4
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -153,9 +158,15 @@ namespace Tests.Automation.Features.API
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("a bank payment \"Alice\" \"10-11-12\" \"12345678\" 100.50 \"GBP\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.WhenAsync("I submit the payment via API", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("the API response status should be \"accepted\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5
+        await testRunner.GivenAsync("a bank payment \"Alice\" \"10-11-12\" \"12345678\" 100.50 \"GBP\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 6
+        await testRunner.WhenAsync("I submit the payment via API", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 7
+        await testRunner.ThenAsync("the API response status should be \"accepted\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

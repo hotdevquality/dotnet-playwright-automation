@@ -29,6 +29,9 @@ namespace Tests.Automation.Features.Payments
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
+#line 1 "CreatePaymentByMethod.feature"
+#line hidden
+        
         public CreatePaymentByMethodFeature(CreatePaymentByMethodFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
@@ -148,7 +151,9 @@ namespace Tests.Automation.Features.Payments
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Create UK cheque payment", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 7
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -156,12 +161,24 @@ namespace Tests.Automation.Features.Payments
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.AndAsync("I choose payment method \"cheque\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.AndAsync("I enter cheque number \"CHQ-001234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.WhenAsync("I submit the payment", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("I should be on the payments list", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 8
+        await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 9
+        await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 10
+        await testRunner.AndAsync("I choose payment method \"cheque\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 11
+        await testRunner.AndAsync("I enter cheque number \"CHQ-001234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 12
+        await testRunner.WhenAsync("I submit the payment", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 13
+        await testRunner.ThenAsync("I should be on the payments list", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -183,7 +200,9 @@ namespace Tests.Automation.Features.Payments
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Create UK credit card payment", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 16
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -191,12 +210,24 @@ namespace Tests.Automation.Features.Payments
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.AndAsync("I choose payment method \"credit card\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.AndAsync("I enter card number \"4111111111111111\" and expiry \"12/29\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.WhenAsync("I submit the payment", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("I should be on the payments list", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 17
+        await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 18
+        await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 19
+        await testRunner.AndAsync("I choose payment method \"credit card\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 20
+        await testRunner.AndAsync("I enter card number \"4111111111111111\" and expiry \"12/29\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 21
+        await testRunner.WhenAsync("I submit the payment", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 22
+        await testRunner.ThenAsync("I should be on the payments list", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -218,7 +249,9 @@ namespace Tests.Automation.Features.Payments
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Create EU PayPal payment", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-            this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line 25
+    this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 await testRunner.SkipScenarioAsync();
@@ -226,12 +259,24 @@ namespace Tests.Automation.Features.Payments
             else
             {
                 await this.ScenarioStartAsync();
-                await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-                await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.AndAsync("I choose payment method \"paypal\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.AndAsync("I enter PayPal email \"payer@example.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-                await testRunner.WhenAsync("I submit the payment", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-                await testRunner.ThenAsync("I should be on the payments list", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 26
+        await testRunner.GivenAsync("I log in as \"initiator\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 27
+        await testRunner.AndAsync("I open the Create Payment page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 28
+        await testRunner.AndAsync("I choose payment method \"paypal\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 29
+        await testRunner.AndAsync("I enter PayPal email \"payer@example.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 30
+        await testRunner.WhenAsync("I submit the payment", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 31
+        await testRunner.ThenAsync("I should be on the payments list", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
